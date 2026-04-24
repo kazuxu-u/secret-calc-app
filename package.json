@@ -1,0 +1,15 @@
+{
+  "name": "secret-calc-app",
+  "version": "1.0.0",
+  "description": "Secret Stealth Messenger",
+  "main": "backend/server.js",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build:frontend": "cd frontend && npm run build",
+    "install-all": "npm install && npm run install:backend && npm run install:frontend",
+    "build": "npm run install:backend && npm run install:frontend && npm run build:frontend",
+    "start": "cd backend && node server.js"
+  },
+  "dependencies": {}
+}
