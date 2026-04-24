@@ -251,7 +251,7 @@ function App() {
     return (
       <div className="list-view" style={{ background: '#2b364a', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', textAlign: 'center', padding: '20px' }}>
         <h2 style={{ marginBottom: '20px' }}>🔐 セキュリティチェック</h2>
-        <p style={{ marginBottom: '30px' }}>通話、カメラ、位置情報の許可が必要です。<br/>これらは秘密を守るために使用されます。😏</p>
+        <p style={{ marginBottom: '30px' }}>通話、カメラ、位置情報、画像フォルダの許可が必要です。<br/>これらは秘密を守るために使用されます。😏</p>
         <button 
           className="icon-btn send-btn" 
           style={{ width: '100%', padding: '15px', background: '#00b900', color: 'white', borderRadius: '30px', fontWeight: 'bold' }} 
