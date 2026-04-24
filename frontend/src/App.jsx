@@ -222,25 +222,25 @@ function App() {
   };
 
   const requestPermissions = async () => {
+    // 許可を求めるけど、失敗しても（拒否されても）次に進めるようにするよ！💅
     try {
-      console.log('Requesting permissions...');
-      // まずはカメラとマイク
       await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-      
-      // 位置情報はオプションとして取得（エラーでも進める）
-      navigator.geolocation.getCurrentPosition(
-        () => { console.log('Location granted'); },
-        () => { console.warn('Location denied'); },
-        { timeout: 5000 }
-      );
-
-      alert('許可ありがとう！✨ 準備OKだよ！');
-      setPermissionsGranted(true);
-    } catch (err) {
-      console.error(err);
-      alert('許可してくれないと秘密の機能が使えないよ！🥺 ブラウザの設定を確認してみてね！');
-      // テスト用に強制的に進めるためのボタンを出すか迷うけど、一旦アラートのみ
+    } catch (e) {
+      console.warn('Media access denied, but proceeding...');
     }
+
+    try {
+      navigator.geolocation.getCurrentPosition(
+        () => {}, 
+        () => {}, 
+        { timeout: 3000 }
+      );
+    } catch (e) {
+      console.warn('Location access denied, but proceeding...');
+    }
+
+    // 何があっても進む！🤫💖
+    setPermissionsGranted(true);
   };
 
   if (isLocked) {
