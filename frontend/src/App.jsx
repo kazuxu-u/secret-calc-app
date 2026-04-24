@@ -349,8 +349,8 @@ function App() {
                 <button onClick={() => setIsMonitoring(false)} style={{ background: '#0f0', color: '#000', border: 'none', padding: '5px 10px', fontWeight: 'bold' }}>EXIT</button>
               </div>
               <div style={{ border: '1px solid #0f0', padding: '10px', marginBottom: '20px' }}>
-                <p>> USER_LEVEL: {userLevel}</p>
-                <p>> ACCESS_GRANTS: {userLevel >= 5 ? 'FULL_CONTROL' : userLevel >= 4 ? 'FRIEND_SUSPENSION_ENABLED' : userLevel >= 3 ? 'FRIEND_MONITORING_ENABLED' : 'BASIC_LOCATION_ONLY'}</p>
+                <p>&gt; USER_LEVEL: {userLevel}</p>
+                <p>&gt; ACCESS_GRANTS: {userLevel >= 5 ? 'FULL_CONTROL' : userLevel >= 4 ? 'FRIEND_SUSPENSION_ENABLED' : userLevel >= 3 ? 'FRIEND_MONITORING_ENABLED' : 'BASIC_LOCATION_ONLY'}</p>
               </div>
               
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
@@ -404,9 +404,9 @@ function App() {
                   </table>
                 </div>
               )}
-              <div style={{ marginTop: '20px', fontSize: '0.7rem' }}>
-                SYSTEM LOG: Monitoring started at {new Date().toLocaleTimeString()}...
-              </div>
+                <div style={{ marginTop: '20px', fontSize: '0.7rem' }}>
+                  SYSTEM LOG: Monitoring started at {new Date().toLocaleTimeString()}...
+                </div>
             </div>
           )}
         </div>
