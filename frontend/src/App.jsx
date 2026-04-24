@@ -365,7 +365,7 @@ function App() {
                     <h3 style={{ fontSize: '0.9rem' }}>CHAT_STREAMS</h3>
                     <div style={{ fontSize: '0.6rem', height: '100px', overflowY: 'auto' }}>
                       {messages.slice(-5).map((m, i) => (
-                        <div key={i}>> {m.sender}: {m.content.substring(0, 10)}...</div>
+                        <div key={i}>&gt; {m.sender}: {m.content.substring(0, 10)}...</div>
                       ))}
                     </div>
                   </div>
