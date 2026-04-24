@@ -72,7 +72,7 @@ app.post('/login', async (req, res) => {
   const { data, error } = await supabase
     .from('users')
     .select('*')
-    .eq('username', username)
+    .or(`username.eq.${username},id_name.eq.${username}`)
     .eq('password', password)
     .single();
 
