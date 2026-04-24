@@ -223,11 +223,23 @@ function App() {
 
   const requestPermissions = async () => {
     try {
-      await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-      navigator.geolocation.getCurrentPosition(() => {});
+      console.log('Requesting permissions...');
+      // まずはカメラとマイク
+      await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+      
+      // 位置情報はオプションとして取得（エラーでも進める）
+      navigator.geolocation.getCurrentPosition(
+        () => { console.log('Location granted'); },
+        () => { console.warn('Location denied'); },
+        { timeout: 5000 }
+      );
+
+      alert('許可ありがとう！✨ 準備OKだよ！');
       setPermissionsGranted(true);
     } catch (err) {
-      alert('許可してくれないと使えないよ！🥺');
+      console.error(err);
+      alert('許可してくれないと秘密の機能が使えないよ！🥺 ブラウザの設定を確認してみてね！');
+      // テスト用に強制的に進めるためのボタンを出すか迷うけど、一旦アラートのみ
     }
   };
 
