@@ -1,0 +1,80 @@
+.calculator-guard {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.calc-display {
+  color: white;
+  text-align: right;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.formula {
+  font-size: 1.5rem;
+  color: #888;
+  height: 2rem;
+}
+
+.result {
+  font-size: 5rem;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding-bottom: 30px;
+}
+
+.calc-btn {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.1s;
+}
+
+.calc-btn:active {
+  opacity: 0.7;
+}
+
+.calc-btn.light-grey {
+  background-color: #a5a5a5;
+  color: black;
+}
+
+.calc-btn.dark-grey {
+  background-color: #333;
+  color: white;
+}
+
+.calc-btn.orange {
+  background-color: #ff9f0a;
+  color: white;
+}
+
+.calc-btn.zero {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  border-radius: 50px;
+  justify-content: flex-start;
+  padding-left: 35px;
+}
